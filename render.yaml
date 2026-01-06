@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: pdf-to-xml-frontend
+    env: docker
+    plan: free
+    region: frankfurt
+    branch: main
+    buildFilter:
+      paths:
+        - src/**
+        - public/**
+        - Dockerfile
+        - nginx.conf
+        - package.json
+        - angular.json
+        - tsconfig.json
+    envVars:
+      - key: BACKEND_URL
+        sync: false # Placeholder, user must set this in dashboard
+      - key: API_AUTH_TOKEN
+        sync: false # Placeholder, user must set this in dashboard

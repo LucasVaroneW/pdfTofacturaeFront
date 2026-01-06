@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  app:
+    container_name: pdf-to-xml-converter
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+    env_file:
+      - .env
+    restart: always
