@@ -1,14 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../../../../environments/environment';
 
 @Injectable({
     providedIn: 'root'
 })
 export class FacturaeService {
-    // In development, we use the proxy configuration or full URL if CORS is allowed.
-    // In production (Nginx), this relative path will be proxied.
-    private apiUrl = '/api/v1/facturae/convert-pdf';
+    private apiUrl = environment.apiUrl;
 
     constructor(private http: HttpClient) { }
 
@@ -16,8 +15,6 @@ export class FacturaeService {
         const formData = new FormData();
         formData.append('file', file);
 
-        // We expect text/xml response, so we set responseType to 'text'
-        // Auth is now handled by Nginx proxy
         return this.http.post(this.apiUrl, formData, {
             responseType: 'text'
         });

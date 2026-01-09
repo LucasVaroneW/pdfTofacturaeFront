@@ -2,7 +2,7 @@ services:
   - type: web
     name: pdf-to-xml-converter
     env: static
-    buildCommand: npm install && npm run build
+    buildCommand: node set-env.js && npm install && npm run build
     staticPublishPath: ./dist/pdf-to-xml-converter/browser
     routes:
       - type: rewrite

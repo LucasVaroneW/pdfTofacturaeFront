@@ -58,11 +58,11 @@ export class ConverterComponent {
         this.xmlResult = null;
 
         this.facturaeService.convertPdf(file).subscribe({
-            next: (response) => {
+            next: (response: string) => {
                 this.isLoading = false;
                 this.xmlResult = response;
             },
-            error: (err) => {
+            error: (err: any) => {
                 this.isLoading = false;
                 console.error('Error converting PDF:', err);
                 this.error = 'Hubo un error al convertir el PDF. Asegúrate de que el backend esté funcionando.';
