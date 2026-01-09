@@ -1,0 +1,14 @@
+<div class="min-h-screen flex flex-col bg-background">
+    <app-header></app-header>
+
+    <main class="flex-grow flex flex-col">
+        <!-- The routed content (Pages) will render here -->
+        <div class="w-full max-w-3xl mx-auto px-6 md:px-8 py-12 flex-grow flex flex-col">
+            <router-outlet></router-outlet>
+        </div>
+    </main>
+
+    <app-footer></app-footer>
+    <app-cookie-banner></app-cookie-banner>
+    <app-toast></app-toast>
+</div>
