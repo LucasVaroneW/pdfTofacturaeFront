@@ -22,11 +22,4 @@ export class FacturaeService {
             responseType: 'text'
         });
     }
-    
-    pingBackend(): Observable<string> {
-        // Simple GET request to wake up the backend
-        return this.http.get('/api/v1/facturae/ping', {
-            responseType: 'text'
-        });
-    }
 }
